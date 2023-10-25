@@ -1,0 +1,54 @@
+<div class="container">
+  <div>
+    <h2>Modifier un Watch :</h2>
+  </div>
+  <form>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Watch</label>
+      <input
+        readonly
+        type="text"
+        [(ngModel)]="currentWatch.idWatch"
+        name="idWatch"
+        class="form-control"
+      />
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Watch</label>
+      <input
+        type="text"
+        [(ngModel)]="currentWatch.nomWatch"
+        name="nomWatch"
+        class="form-control"
+      />
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Prix Watch</label>
+      <input
+        type="number"
+        [(ngModel)]="currentWatch.prixWatch"
+        name="prixWatch"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date création</label>
+      <input
+        type="date"
+        [ngModel]="currentWatch.dateCreation | date : 'yyyy-MM-dd'"
+        (ngModelChange)="currentWatch.dateCreation = $event"
+        name="dateCreation"
+        class="form-control"
+      />
+    </div>
+    <div class="mt-2">
+      <button type="submit" (click)="updateWatch()" class="btn btn-success">
+        Modifier
+      </button>
+
+      <div></div>
+    </div>
+  </form>
+</div>
